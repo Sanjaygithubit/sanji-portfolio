@@ -21,25 +21,47 @@ export const SkillDataProvider = ({
 }: SkillDataProviderProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
+    threshold: 0.2,
   });
-
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const animationDelay = 0.1;
 
   return (
     <motion.div
       ref={ref}
-      initial="hidden"
-      variants={imageVariants}
-      animate={inView ? "visible" : "hidden"}
-      custom={index}
-      transition={{ delay: index * animationDelay }}
+      initial={{ opacity: 0, scale: 0.6, y: 30 }}
+      animate={
+        inView
+          ? {
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }
+          : {}
+      }
+      transition={{
+        delay: index * 0.05,
+        duration: 0.4,
+      }}
+      whileHover={{
+        scale: 1.15,
+        y: -8,
+      }}
+      className="cursor-pointer"
+      title={name}
     >
-      <Image src={`/skills/${src}`} width={width} height={height} alt={name} />
+     <Image
+  src={`/skills/${src}`}
+  alt={name}
+  width={width}
+  height={height}
+  style={{
+    width: "auto",
+    height: "auto",
+    maxWidth: "64px",
+    maxHeight: "64px",
+  }}
+
+        className="transition duration-300 hover:drop-shadow-[0_0_18px_rgba(168,85,247,0.8)]"
+      />
     </motion.div>
   );
 };

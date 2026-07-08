@@ -1,16 +1,30 @@
-import { Encryption } from "@/components/main/encryption";
 import { Hero } from "@/components/main/hero";
-import { Projects } from "@/components/main/projects";
+import { About } from "@/components/main/about";
 import { Skills } from "@/components/main/skills";
+import { Projects } from "@/components/main/projects";
+import { Services } from "@/components/main/services";
+import { Encryption } from "@/components/main/encryption";
+import { Contact } from "@/components/main/contact";
 
 export default function Home() {
   return (
-    <main className="h-full w-full">
-      <div className="flex flex-col gap-20">
+    <main className="relative w-full overflow-x-hidden">
+      <div className="mx-auto flex max-w-7xl flex-col space-y-32 px-6">
+
         <Hero />
+
+        <About />
+
         <Skills />
-        <Encryption />
+
         <Projects />
+
+        <Services />
+
+        <Encryption />
+
+        <Contact />
+
       </div>
     </main>
   );

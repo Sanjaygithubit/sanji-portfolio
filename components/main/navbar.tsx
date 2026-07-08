@@ -1,122 +1,141 @@
 'use client';
+
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
-import { LINKS, NAV_LINKS, SOCIALS } from "@/constants";
+import {  NAV_LINKS, SOCIALS } from "@/constants";
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001427] backdrop-blur-md z-50 px-10">
-      {/* Navbar Container */}
-      <div className="w-full h-full flex items-center justify-between m-auto px-[10px]">
-        {/* Logo + Name */}
-        <Link
-          href="#about-me"
-          className="flex items-center"
-        >
+    <header className="fixed top-0 left-0 w-full z-50 bg-[#050014]/70 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-purple-900/20">
+      <div className="max-w-7xl mx-auto h-[72px] px-6 flex items-center justify-between">
+
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/logo.png"
-            alt="Logo"
-            width={70}
-            height={70}
+            src="/logo4.png"
+            alt="Sanjay Logo"
+            width={58}
+            height={58}
+            priority
             draggable={false}
-            className="cursor-pointer"
           />
-          <div className="hidden md:flex md:selffont-bold ml-[10px] text-gray-300">John Doe</div>
+
+          <div className="hidden md:flex flex-col leading-none">
+            <span className="text-white text-lg font-bold tracking-wider">
+              SANJAY
+            </span>
+
+            <span className="text-xs text-purple-400">
+              MERN Developer
+            </span>
+          </div>
         </Link>
 
-        {/* Web Navbar */}
-        <div className="hidden md:flex w-[500px] h-full flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border-[rgba(112,66,248,0.38)] bg-[rgba(3,0,20,0.37)] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.title}
-                href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
-              >
-                {link.title}
-              </Link>
-            ))}
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-8 px-8 py-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-lg">
 
-            {/* Source Code */}
+          {NAV_LINKS.map((link) => (
             <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition"
+              key={link.title}
+              href={link.link}
+              className="relative text-gray-300 hover:text-purple-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-purple-500 after:transition-all after:duration-300 hover:after:w-full"
             >
-              Source Code
-            </Link>
-          </div>
-        </div>
-
-        {/* Social Icons (Web) */}
-        <div className="hidden md:flex flex-row gap-5">
-          {SOCIALS.map(({ link, name, icon: Icon }) => (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              key={name}
-            >
-              <Icon className="h-6 w-6 text-white" />
+              {link.title}
             </Link>
           ))}
+
+        </nav>
+
+        {/* Right Side */}
+        <div className="hidden md:flex items-center gap-5">
+
+          {SOCIALS.map(({ link, name, icon: Icon }) => (
+            <Link
+              key={name}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon className="w-5 h-5 text-gray-300 hover:text-purple-400 hover:scale-110 transition-all duration-300" />
+            </Link>
+          ))}
+
+          <Link
+            href="/Sanjay_Resume.pdf"
+            download
+            className="px-5 py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-medium hover:scale-105 transition-all duration-300"
+          >
+            Resume
+          </Link>
+
         </div>
 
-        {/* Hamburger Menu */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white focus:outline-none text-4xl"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          className="md:hidden text-white"
         >
-          ☰
+          {isMobileMenuOpen ? (
+            <X className="w-8 h-8" />
+          ) : (
+            <Menu className="w-8 h-8" />
+          )}
         </button>
+
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-[65px] left-0 w-full bg-[#030014] p-5 flex flex-col items-center text-gray-300 md:hidden">
-          {/* Links */}
-          <div className="flex flex-col items-center gap-4">
+
+        <div className="md:hidden bg-[#050014]/95 backdrop-blur-xl border-t border-white/10">
+
+          <div className="flex flex-col items-center gap-6 py-8">
+
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.title}
                 href={link.link}
-                className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="text-gray-300 hover:text-purple-400 transition text-lg"
               >
                 {link.title}
               </Link>
             ))}
+
             <Link
-              href={LINKS.sourceCode}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="cursor-pointer hover:text-[rgb(112,66,248)] transition text-center"
+              href="/projects/resume.pdf"
+              download
               onClick={() => setIsMobileMenuOpen(false)}
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white"
             >
-              Source Code
+              Download Resume
             </Link>
+
+            <div className="flex gap-6 mt-2">
+
+              {SOCIALS.map(({ link, name, icon: Icon }) => (
+                <Link
+                  key={name}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="w-7 h-7 text-white hover:text-purple-400 transition" />
+                </Link>
+              ))}
+
+            </div>
+
           </div>
 
-          {/* Social Icons */}
-          <div className="flex justify-center gap-6 mt-6">
-            {SOCIALS.map(({ link, name, icon: Icon }) => (
-              <Link
-                href={link}
-                target="_blank"
-                rel="noreferrer noopener"
-                key={name}
-              >
-                <Icon className="h-8 w-8 text-white" />
-              </Link>
-            ))}
-          </div>
         </div>
+
       )}
-    </div>
+    </header>
   );
 };

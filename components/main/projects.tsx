@@ -5,12 +5,13 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="flex flex-col items-center justify-center py-20"
+      className="py-20 px-6 md:px-10"
     >
-      <h1 className="text-[40px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 py-20">
+      <h1 className="mb-16 text-center text-5xl font-bold bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
         My Projects
       </h1>
-      <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
+
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-8 md:grid-cols-2">
         {PROJECTS.map((project) => (
           <ProjectCard
             key={project.title}

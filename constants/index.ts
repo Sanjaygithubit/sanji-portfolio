@@ -1,10 +1,11 @@
 import { FaYoutube, FaFacebook } from "react-icons/fa";
 import {
-  RxDiscordLogo,
   RxGithubLogo,
-  RxInstagramLogo,
-  RxTwitterLogo,
   RxLinkedinLogo,
+   RxHome,
+  RxPerson,
+  RxCode,
+  RxClipboard,
 } from "react-icons/rx";
 
 export const SKILL_DATA = [
@@ -27,82 +28,54 @@ export const SKILL_DATA = [
     height: 65,
   },
   {
+    skill_name: "React",
+    image: "react.png",
+    width: 75,
+    height: 75,
+  },
+  {
+    skill_name: "Next.js",
+    image: "next.png",
+    width: 70,
+    height: 70,
+  },
+  {
     skill_name: "Tailwind CSS",
     image: "tailwind.png",
     width: 80,
     height: 80,
   },
   {
-    skill_name: "React",
-    image: "react.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Redux",
-    image: "redux.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "React Query",
-    image: "reactquery.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "TypeScript",
-    image: "ts.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Next.js 14",
-    image: "next.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Framer Motion",
-    image: "framer.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Stripe",
-    image: "stripe.png",
-    width: 80,
-    height: 80,
-  },
-  {
     skill_name: "Node.js",
     image: "node.png",
-    width: 80,
-    height: 80,
+    width: 75,
+    height: 75,
+  },
+  {
+    skill_name: "Express.js",
+    image: "express.png",
+    width: 75,
+    height: 75,
   },
   {
     skill_name: "MongoDB",
     image: "mongodb.png",
-    width: 40,
-    height: 40,
+    width: 45,
+    height: 45,
   },
-] as const;
+];
 
 export const SOCIALS = [
   {
-    name: "Instagram",
-    icon: RxInstagramLogo,
-    link: "https://instagram.com",
+    name: "linkedin",
+    icon: RxLinkedinLogo,
+    link: "https://www.linkedin.com/in/s-sanjay-57a3b0368/",
   },
+ 
   {
-    name: "Facebook",
-    icon: FaFacebook,
-    link: "https://facebook.com",
-  },
-  {
-    name: "Twitter",
-    icon: RxTwitterLogo,
-    link: "https://x.com/_sanidhyy",
+    name: "GitHub",
+    icon: RxGithubLogo,
+    link: "https://github.com/Sanjaygithubit",
   },
 ] as const;
 
@@ -110,62 +83,38 @@ export const FRONTEND_SKILL = [
   {
     skill_name: "HTML",
     image: "html.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
   {
     skill_name: "CSS",
     image: "css.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
   {
     skill_name: "JavaScript",
     image: "js.png",
-    width: 65,
-    height: 65,
-  },
-  {
-    skill_name: "Tailwind CSS",
-    image: "tailwind.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Material UI",
-    image: "mui.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
   {
     skill_name: "React",
     image: "react.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
   {
-    skill_name: "Redux",
-    image: "redux.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "React Query",
-    image: "reactquery.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "TypeScript",
-    image: "ts.png",
-    width: 80,
-    height: 80,
-  },
-  {
-    skill_name: "Next.js 14",
+    skill_name: "Next.js",
     image: "next.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
+  },
+  {
+    skill_name: "Tailwind CSS",
+    image: "tailwind.png",
+    width: 64,
+    height: 64,
   },
 ] as const;
 
@@ -173,172 +122,144 @@ export const BACKEND_SKILL = [
   {
     skill_name: "Node.js",
     image: "node.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
   {
     skill_name: "Express.js",
     image: "express.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
   {
     skill_name: "MongoDB",
     image: "mongodb.png",
-    width: 40,
-    height: 40,
-  },
-  {
-    skill_name: "Firebase",
-    image: "firebase.png",
-    width: 55,
-    height: 55,
-  },
-  {
-    skill_name: "PostgreSQL",
-    image: "postgresql.png",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "MySQL",
-    image: "mysql.png",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "Prisma",
-    image: "prisma.png",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "Graphql",
-    image: "graphql.png",
-    width: 80,
-    height: 80,
+    width: 64,
+    height: 64,
   },
 ] as const;
 
-export const FULLSTACK_SKILL = [
-  {
-    skill_name: "React Native",
-    image: "reactnative.png",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "Tauri",
-    image: "tauri.png",
-    width: 70,
-    height: 70,
-  },
-  {
-    skill_name: "Docker",
-    image: "docker.png",
-    width: 70,
-    height: 70,
-  },
-
-  {
-    skill_name: "Figma",
-    image: "figma.png",
-    width: 50,
-    height: 50,
-  },
-] as const;
+export const FULLSTACK_SKILL = [] as const;
 
 export const OTHER_SKILL = [
   {
-    skill_name: "Go",
-    image: "go.png",
-    width: 60,
-    height: 60,
+    skill_name: "Git",
+    image: "git.png",
+    width: 64,
+    height: 64,
+  },
+  {
+    skill_name: "GitHub",
+    image: "github.png",
+    width: 64,
+    height: 64,
+  },
+  {
+    skill_name: "VS Code",
+    image: "vscode.png",
+    width: 64,
+    height: 64,
+  },
+  {
+    skill_name: "Vercel",
+    image: "vercel.png",
+    width: 64,
+    height: 64,
   },
 ] as const;
-
 export const PROJECTS = [
   {
-    title: "Modern Next.js 14 Portfolio",
+    title: "EV Spare Parts Website",
     description:
-      'Embark on a journey through my professional evolution with the "Modern Next.js Portfolio" - a dynamic showcase of my skills, experiences, and passion for web development. Crafted with precision and powered by Next.js, this portfolio is more than just a static display; it\'s an immersive experience that reflects the cutting edge of modern web technologies.',
-    image: "/projects/project-1.png",
-    link: "https://example.com",
+      'A responsive EV Spare Parts website built using React and Tailwind CSS, featuring product listings, category filtering, WhatsApp integration, contact forms, and a modern user interface optimized for all devices.',
+    image: "/projects/project1.png",
+    link: "https://ev-flame.vercel.app/",
   },
   {
-    title: "Interactive Cards Portfolio",
+    title: "Premium Construction Company Website",
     description:
-      'Step into the extraordinary world of my professional journey through the "Interactive Cards Portfolio" - an innovative and visually captivating platform that redefines the traditional portfolio experience. Ditching the conventional static layout, this portfolio leverages interactive cards to showcase my skills, projects, and personality in an engaging and dynamic manner.',
-    image: "/projects/project-2.png",
-    link: "https://example.com",
+      'Developed a premium construction company website focused on showcasing construction services, project portfolio, company expertise, and customer engagement. The website features responsive layouts, interactive UI elements, and optimized performance for desktop and mobile users.',
+    image: "/projects/project2.png",
+    link: "https://construction-e4wi-eight.vercel.app/",
   },
   {
-    title: "Space Themed Website",
+    title: "Weather Report Application",
     description:
-      'Embark on an interstellar journey with my "Space Themed Website", a mesmerizing space-themed website that invites you to explore the cosmic wonders beyond our world. Immerse yourself in an awe-inspiring digital experience that blends cutting-edge design with the mysteries of the universe.',
-    image: "/projects/project-3.png",
-    link: "https://example.com",
+    'Developed a responsive weather application that provides real-time weather information using a weather API. The application allows users to search for any city and view current temperature, weather conditions, humidity, wind speed, and other essential weather details through a clean, user-friendly interface optimized for both desktop and mobile devices.',
+    image: "/projects/project3.png",
+    link: "https://weather-report-app-xi.vercel.app/",
   },
+   {
+    title: "Netflix Login System with Mock Backend",
+    description:
+    'Developed a Netflix-inspired login application featuring a responsive user interface and a mock backend for user authentication. The project simulates the complete login workflow by validating user credentials, handling authentication responses, displaying error messages for invalid logins, and redirecting authenticated users to a protected dashboard. It demonstrates frontend-backend integration, form validation, and API communication in a realistic development environment.',
+    image: "/projects/project4.png",
+    link: "https://netflix-clone-frontend-vert.vercel.app/",
+  },
+
 ] as const;
+
 
 export const FOOTER_DATA = [
   {
-    title: "Community",
+    title: "Navigation",
     data: [
       {
-        name: "YouTube",
-        icon: FaYoutube,
-        link: "https://youtube.com",
+        name: "Home",
+        icon: RxHome,
+        link: "#home",
       },
+      {
+        name: "About",
+        icon: RxPerson,
+        link: "#about",
+      },
+      {
+        name: "Skills",
+        icon: RxCode,
+        link: "#skills",
+      },
+      {
+        name: "Projects",
+        icon: RxClipboard,
+        link: "#projects",
+      },
+    ],
+  },
+
+  {
+    title: "Connect",
+    data: [
       {
         name: "GitHub",
         icon: RxGithubLogo,
-        link: "https://github.com",
+        link: "https://github.com/Sanjaygithubit",
       },
       {
-        name: "Discord",
-        icon: RxDiscordLogo,
-        link: "https://discord.com",
-      },
-    ],
-  },
-  {
-    title: "Social Media",
-    data: [
-      {
-        name: "Instagram",
-        icon: RxInstagramLogo,
-        link: "https://instagram.com",
-      },
-      {
-        name: "Twitter",
-        icon: RxTwitterLogo,
-        link: "https://x.com/_sanidhyy",
-      },
-      {
-        name: "Linkedin",
+        name: "LinkedIn",
         icon: RxLinkedinLogo,
-        link: "https://linkedin.com",
+        link: "https://www.linkedin.com/in/s-sanjay-57a3b0368/",
       },
     ],
   },
+
   {
-    title: "About",
+    title: "Contact",
     data: [
       {
-        name: "Become Sponsor",
+        name: "sanjaydev18@gmail.com",
         icon: null,
-        link: "https://youtube.com",
+        link: "mailto:sanjaydev18@gmail.com",
       },
       {
-        name: "Learning about me",
+        name: "Chennai, Tamil Nadu",
         icon: null,
-        link: "https://example.com",
+        link: "#",
       },
       {
-        name: "Contact Me",
+        name: "Available for Freelance",
         icon: null,
-        link: "mailto:contact@example.com",
+        link: "#",
       },
     ],
   },
@@ -346,19 +267,24 @@ export const FOOTER_DATA = [
 
 export const NAV_LINKS = [
   {
-    title: "About me",
-    link: "#about-me",
+    title: "Home",
+    link: "#home",
   },
   {
-    title: "Skills",
+    title: "About",
+    link: "#about",
+  },
+  {
+    title: "Tech Stack",
     link: "#skills",
   },
   {
     title: "Projects",
     link: "#projects",
   },
+  {
+    title: "Contact",
+    link: "#contact",
+  },
 ] as const;
 
-export const LINKS = {
-  sourceCode: "https://github.com/sanidhyy/space-portfolio",
-};
