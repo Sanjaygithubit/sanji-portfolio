@@ -7,61 +7,88 @@ import { slideInFromTop } from "@/lib/motion";
 
 export const Encryption = () => {
   return (
-    <div className="flex flex-row relative items-center justify-center min-h-screen w-full h-full -z-20">
-      <div className="absolute w-auto h-auto top-0 z-[5]">
+    <section className="relative flex min-h-[70vh] md:min-h-screen w-full items-center justify-center overflow-hidden px-6 py-20">
+
+      {/* Heading */}
+      <div className="absolute top-10 md:top-16 z-20">
         <motion.div
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-center"
         >
-          Performance{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-            &
-          </span>{" "}
-          security.
+          <h2 className="text-3xl md:text-5xl font-bold text-white">
+            Performance{" "}
+            <span className="bg-gradient-to-r from-purple-500 to-cyan-500 bg-clip-text text-transparent">
+              &
+            </span>{" "}
+            Security
+          </h2>
+
+          <p className="mt-3 text-sm md:text-base text-gray-400">
+            Fast, Secure & Optimized Web Applications
+          </p>
         </motion.div>
       </div>
 
-      <div className="flex flex-col items-center justify-center translate-y-[-50px] absolute z-[20] w-auto h-auto">
-        <div className="flex flex-col items-center group cursor-pointer w-auto h-auto">
+      {/* Lock */}
+      <div className="relative z-20 flex flex-col items-center mt-16 md:mt-0">
+
+        <div className="group relative flex flex-col items-center">
+
           <Image
             src="/lock-top.png"
-            alt="Lock top"
-            width={50}
-            height={50}
-            className="translate-y-5 transition-all duration-200 group-hover:translate-y-11"
+            alt="Lock Top"
+            width={60}
+            height={60}
+            className="translate-y-6 transition-all duration-300 group-hover:translate-y-10 w-12 md:w-[60px] h-auto"
           />
+
           <Image
             src="/lock-main.png"
-            alt="Lock main"
-            width={70}
-            height={70}
-            className="z-10"
+            alt="Lock"
+            width={90}
+            height={90}
+            className="w-20 md:w-[90px] h-auto"
           />
+
         </div>
 
-        <div className="Welcome-box px-[15px] py-[4px] z-[20] border my-[20px] border-[#7042F88B] opacity-[0.9]">
-          <h1 className="Welcome-text text-[12px]">Encryption</h1>
+        <div className="mt-6 rounded-full border border-purple-500/40 bg-[#0c071f]/80 px-6 py-2 backdrop-blur-md">
+          <p className="text-sm tracking-wide text-purple-300">
+            Encryption Enabled
+          </p>
         </div>
+
       </div>
 
-      <div className="absolute z-[20] bottom-[10px] px-[5px]">
-        <div className="cursive text-[20px] font-medium text-center text-gray-300">
-          Secure your data with end-to-end encryption.
-        </div>
+      {/* Bottom Text */}
+      <div className="absolute bottom-8 z-20 px-6 text-center">
+        <p className="max-w-xl text-sm md:text-lg text-gray-300 leading-7">
+          Building secure, scalable and high-performance web applications
+          using modern technologies with a focus on user privacy and
+          reliability.
+        </p>
       </div>
 
-      <div className="w-full flex items-start justify-center absolute">
+      {/* Background Video */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         <video
-          loop
-          muted
           autoPlay
+          muted
+          loop
           playsInline
-          preload="false"
-          className="w-full h-auto"
+          className="h-full w-full object-cover opacity-50"
         >
-          <source src="/videos/encryption-bg.webm" type="video/webm" />
+          <source
+            src="/videos/encryption-bg.webm"
+            type="video/webm"
+          />
         </video>
+
+        <div className="absolute inset-0 bg-[#030014]/60" />
       </div>
-    </div>
+    </section>
   );
 };
