@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden"
+      className="relative min-h-screen w-full overflow-hidden"
     >
       {/* Background Video */}
       <video
@@ -14,26 +14,36 @@ export const Hero = () => {
         playsInline
         preload="auto"
         className="
+         hidden
+          md:block
           absolute
-          left-0
-          top-[-180px]
-          md:top-[-340px]
-          h-full
+          inset-0
           w-full
-          rotate-180
+          h-full
           object-cover
+          object-center
+          rotate-180
+           
+          scale-[1.45]
+          sm:scale-[1.25]
+          md:scale-100
+
+          top-[-120px]
+          sm:top-[-180px]
+          md:top-[-340px]
+
           -z-20
-          opacity-90
         "
       >
         <source src="/videos/blackhole.webm" type="video/webm" />
       </video>
+{/* Background */}
 
       {/* Overlay */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#030014]/10 via-[#030014]/20 to-[#030014]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030014]/10 via-[#030014]/25 to-[#030014] -z-10" />
 
       {/* Hero Content */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10">
         <HeroContent />
       </div>
     </section>
