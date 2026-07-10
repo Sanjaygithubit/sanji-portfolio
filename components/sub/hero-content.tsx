@@ -19,39 +19,26 @@ export const HeroContent = () => {
         relative
         z-20
         mx-auto
-        flex
+        grid
         w-full
         max-w-7xl
-        flex-col
+        grid-cols-1
         items-center
-        justify-between
         gap-10
-        px-5
+        px-6
         pt-24
         pb-16
 
-        md:flex-row
+        md:grid-cols-2
         md:px-10
-        md:pt-36
+        md:pt-28
 
         lg:px-20
         lg:pt-40
       "
     >
-      {/* LEFT SIDE */}
-      <div
-        className="
-          flex
-          flex-1
-          flex-col
-          items-center
-          text-center
-
-          md:items-start
-          md:text-left
-        "
-      >
-        {/* Welcome Badge */}
+      {/* LEFT */}
+      <div className="flex flex-col items-center text-center md:items-start md:text-left">
         <motion.div
           variants={slideInFromTop}
           className="Welcome-box inline-flex items-center rounded-full border border-[#7042f88b] px-5 py-2"
@@ -63,20 +50,17 @@ export const HeroContent = () => {
           </h1>
         </motion.div>
 
-        {/* Heading */}
         <motion.h1
           variants={slideInFromLeft(0.5)}
           className="
             mt-8
-            max-w-[700px]
-
-            text-5xl
             font-bold
             leading-[1.05]
             text-white
 
+            text-5xl
             sm:text-6xl
-            md:text-6xl
+            md:text-5xl
             lg:text-7xl
           "
         >
@@ -87,29 +71,25 @@ export const HeroContent = () => {
           Experiences
         </motion.h1>
 
-        {/* Description */}
         <motion.p
           variants={slideInFromLeft(0.8)}
           className="
             mt-8
-            max-w-[620px]
+            max-w-xl
+            text-gray-300
+
             text-base
             leading-8
-            text-gray-300
 
             md:text-lg
           "
         >
-          I'm{" "}
-          <span className="font-semibold text-white">
-            Sanjay
-          </span>
-          , a MERN Stack Developer passionate about building fast,
-          responsive and user-friendly web applications using React,
-          Next.js, Tailwind CSS, Node.js, Express.js and MongoDB.
+          I'm <span className="font-semibold text-white">Sanjay</span>, a MERN
+          Stack Developer passionate about building fast, responsive and
+          user-friendly web applications using React, Next.js, Tailwind CSS,
+          Node.js, Express.js and MongoDB.
         </motion.p>
 
-        {/* Buttons */}
         <motion.div
           variants={slideInFromLeft(1)}
           className="
@@ -140,36 +120,38 @@ export const HeroContent = () => {
         </motion.div>
       </div>
 
-      {/* RIGHT SIDE */}
+      {/* RIGHT */}
       <motion.div
         variants={slideInFromRight(0.8)}
         className="
           hidden
-          flex-1
-          items-center
-          justify-center
-
           md:flex
+          justify-end
+          items-start
         "
       >
         <Image
           src="/hero-bg.svg"
-          alt="Hero Illustration"
+          alt="Hero"
           width={700}
           height={700}
           priority
           draggable={false}
           className="
-            h-auto
-            w-[500px]
-
-            lg:w-[620px]
-            xl:w-[700px]
-
             select-none
+
+            w-[340px]
+
+            md:-mt-24
+            md:w-[380px]
+
+            lg:-mt-10
+            lg:w-[560px]
+
+            xl:w-[650px]
           "
         />
       </motion.div>
     </motion.section>
   );
-};
+}
