@@ -42,13 +42,13 @@ export const siteConfig: Metadata = {
 
   category: "Technology",
 
-  metadataBase: new URL("https://your-portfolio-domain.vercel.app"),
+  metadataBase: new URL("https://sanji-portfolio.vercel.app"),
 
   openGraph: {
     title: "Sanjay | MERN Stack Developer",
     description:
       "Explore my portfolio showcasing MERN Stack projects, frontend development, and responsive web applications.",
-    url: "https://your-portfolio-domain.vercel.app",
+    url: "https://sanji-portfolio.vercel.app",
     siteName: "Sanjay Portfolio",
     locale: "en_US",
     type: "website",
